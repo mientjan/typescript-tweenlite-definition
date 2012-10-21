@@ -1,4 +1,4 @@
-declare interface ITweenliteCSS extends CSS3Properties {
+interface ITweenliteCSS extends CSS3Properties {
 	className?: string;
 	scaleX?: any;
 	rotation?: any;
@@ -6,7 +6,7 @@ declare interface ITweenliteCSS extends CSS3Properties {
 	autoAlpha: number;
 }
 
-declare interface ITweenLiteProperties {
+ interface ITweenLiteProperties {
 	delay?: number;
 	ease?: Function;
 	onComplete: Function;
@@ -28,7 +28,7 @@ declare interface ITweenLiteProperties {
 	css?: ITweenliteCSS;
 }
 
-declare class TweenLiteStandard {
+class TweenLiteStandard {
 	public pause():void;
 	public resume():void;
 	public restart(): void;
@@ -38,6 +38,14 @@ declare class TweenLiteStandard {
 	public timeScale(time:number): void;
 	public kill(): void;
 }
+
+interface Easing { 
+	easeIn: Function; 
+	easeInOut: Function; 
+	easeOut: Function;
+}
+
+class Back { }
 
 declare class TweenLite extends TweenLiteStandard {
 
@@ -49,8 +57,10 @@ declare class TweenLite extends TweenLiteStandard {
 
 	static killTweensOf(el: HTMLElement);
 
+	static activate(plugin:any): void;
+	static activate(plugin:any[]): void;
 
-	constructor (el: HTMLElement, time: number, css?: ITweenLiteProperties, ease?: any);
+	constructor (el: HTMLElement[], time: number, css?: ITweenLiteProperties, ease?: any);
 }
 
 declare class TimelineLite extends TweenLiteStandard {
