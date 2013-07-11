@@ -1,3 +1,5 @@
+
+
 interface ITweenliteCSS extends CSS3Properties {
 	className?: string;
 	scaleX?: any;
@@ -6,7 +8,7 @@ interface ITweenliteCSS extends CSS3Properties {
 	autoAlpha: number;
 }
 
- interface ITweenLiteProperties {
+interface ITweenLiteProperties {
 	delay?: number;
 	ease?: Function;
 	onComplete: Function;
@@ -39,19 +41,16 @@ class TweenLiteStandard {
 	public kill(): void;
 }
 
-interface Easing { 
-	easeIn: Function; 
-	easeInOut: Function; 
-	easeOut: Function;
-}
+declare class TweenLite extends TweenLiteStandard
+{
+	static set(target: any, properties: Object);
 
-class Back { }
-
-declare class TweenLite extends TweenLiteStandard {
+	static killTweensOf(target: any, vars?: any);
 
 	static defaultOverwrite(overwrite:string):void;
 	static defaultOverwrite(overwrite:bool):void;
 
+	static to(target: any, time: number, css?: ITweenLiteProperties);
 	static to(el: HTMLElement, time: number, css?: ITweenLiteProperties, ease?: any): TweenLite;
 	static to(el: HTMLElement[], time: number, css?: ITweenLiteProperties, ease?: any): TweenLite;
 
@@ -63,10 +62,44 @@ declare class TweenLite extends TweenLiteStandard {
 	constructor (el: HTMLElement[], time: number, css?: ITweenLiteProperties, ease?: any);
 }
 
-declare class TimelineLite extends TweenLiteStandard {
-	constructor ();
-	public to();
-	public staggerTo();
-	public call(fn: Function);
+declare class Quad
+{
+	static easeInOut(a:number, b:number, c:number, d:number);
+	static easeIn(a:number, b:number, c:number, d:number);
+	static easeOut(a:number, b:number, c:number, d:number);
+}
 
+declare class Power0
+{
+	static easeInOut(a:number, b:number, c:number, d:number);
+	static easeIn(a:number, b:number, c:number, d:number);
+	static easeOut(a:number, b:number, c:number, d:number);
+}
+
+declare class Power1
+{
+	static easeInOut(a:number, b:number, c:number, d:number);
+	static easeIn(a:number, b:number, c:number, d:number);
+	static easeOut(a:number, b:number, c:number, d:number);
+}
+
+declare class Power2
+{
+	static easeInOut(a:number, b:number, c:number, d:number);
+	static easeIn(a:number, b:number, c:number, d:number);
+	static easeOut(a:number, b:number, c:number, d:number);
+}
+
+declare class Power3
+{
+	static easeInOut(a:number, b:number, c:number, d:number);
+	static easeIn(a:number, b:number, c:number, d:number);
+	static easeOut(a:number, b:number, c:number, d:number);
+}
+
+declare class Power4
+{
+	static easeInOut(a:number, b:number, c:number, d:number);
+	static easeIn(a:number, b:number, c:number, d:number);
+	static easeOut(a:number, b:number, c:number, d:number);
 }
