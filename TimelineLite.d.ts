@@ -11,18 +11,18 @@ declare class TimelineLite extends TweenLiteStandard
 	public staggerTo();
 	public call(fn: Function);
 	
-	to(target: any, durationSeconds: number, properties: Object, offset?:string):TimelineMax;
-	to(target: any, durationSeconds: number, properties: Object, offset?:number):TimelineMax;
+	to(target: any, durationSeconds: number, properties: Object, offset?:string):TimelineLite;
+	to(target: any, durationSeconds: number, properties: Object, offset?:number):TimelineLite;
 
-	add(value: any, position?: string, stagger?: number ):TimelineMax;
-	add(value: any, position?: number, stagger?: number ):TimelineMax;
+	add(value: any, position?: string, stagger?: number ):TimelineLite;
+	add(value: any, position?: number, stagger?: number ):TimelineLite;
 
-	set(target: any, properties: Object, offset?:string):TimelineMax;
-	set(target: any, properties: Object, offset?:number):TimelineMax;
+	set(target: any, properties: Object, offset?:string):TimelineLite;
+	set(target: any, properties: Object, offset?:number):TimelineLite;
 	
-	play():TimelineMax;
-	pause():TimelineMax;
-	stop():TimelineMax;
+	play():TimelineLite;
+	pause():TimelineLite;
+	stop():TimelineLite;
 
 	kill():void;
 	killTweensOf():void;
@@ -33,7 +33,7 @@ declare class TimelineLite extends TweenLiteStandard
 
 	insert(tween:any, timeOrLabel?:number);
 
-	append(tween:any, offset?:string):TimelineMax;
+	append(tween:any, offset?:string):TimelineLite;
 
 	tweenTo(timeOrLabel:any, vars?:any);
 
@@ -42,12 +42,12 @@ declare class TimelineLite extends TweenLiteStandard
 
 	reverse(forceResume?:bool);
 
-	addLabel(label:string, time?:number):TimelineMax;
+	addLabel(label:string, time?:number):TimelineLite;
 
-	addCallback(callback: () => void, timeOrLabel:number, params?:any):TimelineMax;
-	addCallback(callback: () => void, timeOrLabel:string, params?:any):TimelineMax;
+	addCallback(callback: () => void, timeOrLabel:number, params?:any):TimelineLite;
+	addCallback(callback: () => void, timeOrLabel:string, params?:any):TimelineLite;
 
-	timeScale(scale:number):TimelineMax;
+	timeScale(scale:number):TimelineLite;
 	timeScale():number;
 
 	currentLabel:string;
